@@ -1,0 +1,7 @@
+"*":
+  editor:
+    fontSize: 12
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "32e938d9-a0d1-498a-aa01-a6c8190eac0b"
