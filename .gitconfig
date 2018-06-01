@@ -1,0 +1,12 @@
+[core]
+    pager = less -q -R
+    excludesfile = ~/.gitignore
+    preloadindex = true
+
+[color]
+    ui = auto
+
+[alias]
+    st = status
+    co = checkout
+    
