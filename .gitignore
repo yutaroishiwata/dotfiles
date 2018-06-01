@@ -1,6 +1,7 @@
 node_modules
 blob-store
 compile-cache
+packages
 dev
 storage
 .apm
