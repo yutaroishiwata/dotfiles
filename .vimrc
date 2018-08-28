@@ -1,3 +1,4 @@
+"dein Scripts-----------------------------
 if &compatible
  set nocompatible
 endif
@@ -24,9 +25,18 @@ if dein#load_state('~/.vim/dein')
  call dein#save_state()
 endif
 
+"End dein Scripts-------------------------
+
+" language
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 " alias
 :command Tr NERDTree
 :command Po PrevimOpen
+
+
 
 
 filetype plugin indent on
