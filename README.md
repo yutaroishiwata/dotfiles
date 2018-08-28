@@ -7,7 +7,7 @@ $ git clone git@github.com:yutaroo/dotfiles.git ~/Documents/dotfiles
 
 ## Create Symbolic Link for UNIX
 ```
-$ ln -s ~/Documents/dotfiles/.atom ~/.atom
+$ ln -s ~/Documents/dotfiles/.atom/my-packages.txt ~/.atom/my-packages.txt
 $ ln -s ~/Documents/dotfiles/.vimrc ~/.vimrc
 ```
 ## Create Hard Link for Windows

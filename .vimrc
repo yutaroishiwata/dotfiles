@@ -21,6 +21,18 @@ if dein#load_state('~/.vim/dein')
    call dein#add('roxma/vim-hug-neovim-rpc')
  endif
 
+ " Syntax
+ call dein#add('jiangmiao/simple-javascript-indenter')
+ call dein#add('jelera/vim-javascript-syntax')
+ call dein#add('kchmck/vim-coffee-script')
+ call dein#add('tpope/vim-haml')
+ call dein#add('groenewege/vim-less')
+ call dein#add('wavded/vim-stylus')
+ call dein#add('digitaltoad/vim-jade')
+ call dein#add('leafgarland/typescript-vim')
+ call dein#add('nikvdp/ejs-syntax')
+ call dein#add('posva/vim-vue')
+
  call dein#end()
  call dein#save_state()
 endif

@@ -1,12 +1,13 @@
+autocomplete-paths@2.12.2
 busy-signal@1.4.3
+color-picker@2.3.0
 emmet@2.4.3
-file-icons@2.1.21
-highlight-column@0.5.4
-highlight-selected@0.13.1
+highlight-selected@0.14.0
 intentions@1.1.5
 language-pug@0.0.22
 linter@2.2.0
 linter-htmlhint@1.4.0
 linter-ui-default@1.7.1
 project-manager@3.3.6
+sequential-number@0.5.0
 
