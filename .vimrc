@@ -48,16 +48,37 @@ set fileformats=unix,dos,mac
 " Appearance
 colorscheme iceberg
 set background=dark
+set cursorline
+set laststatus=2
+set linespace=4
 set list
 set listchars=eol:¬,tab:▸\
 set number
 set numberwidth=5
 
-" alias
-:command Tr NERDTree
-:command Po PrevimOpen
+" Keymaping
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+noremap j gj
+noremap k gk
+noremap <S-h> ^
+noremap <S-j> }
+noremap <S-k> {
+noremap <S-l> $
+nnoremap <CR> A<CR><ESC>
+nnoremap <Space>n :<C-u>NERDTree<CR>
+nnoremap <Space>p :<C-u>PrevimOpen<CR>
 
-" NERDTree seting
+"prefix key
+nmap <Space> [unite]
+" dein
+nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
+nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
+nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
+
+" NERDTree
 autocmd VimEnter * execute 'NERDTree'
 
 
