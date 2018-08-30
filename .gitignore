@@ -4,6 +4,7 @@ compile-cache
 packages
 dev
 storage
+.vim/dein
 .apm
 .node-gyp
 .npm

@@ -41,14 +41,24 @@ endif
 
 " language
 set encoding=utf-8
+scriptencoding utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
+
+" Appearance
+colorscheme iceberg
+set background=dark
+set list
+set listchars=eol:¬,tab:▸\
+set number
+set numberwidth=5
 
 " alias
 :command Tr NERDTree
 :command Po PrevimOpen
 
-
+" NERDTree seting
+autocmd VimEnter * execute 'NERDTree'
 
 
 filetype plugin indent on
