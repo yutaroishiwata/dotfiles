@@ -12,7 +12,7 @@ $ ln -s ~/Documents/dotfiles/.atom/my-packages.txt ~/.atom/my-packages.txt
 $ ln -s ~/Documents/dotfiles/.vimrc ~/.vimrc
 $ ln -s ~/Documents/dotfiles/.vim ~/.vim
 ```
-## Create Hard Link for Windows
+## Create Symbolic for Windows
 ```
 $ mklink C:\Users\username\.atom\my-packages.txt C:\Users\username\Documents\dotfiles\.atom\my-packages.txt
 $ mklink C:\Users\username\.vimrc C:\Users\username\Documents\dotfiles\.vimrc
