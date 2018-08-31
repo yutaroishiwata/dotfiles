@@ -1,5 +1,6 @@
 # dotfiles
 
+
 ## Install
 ```
 $ git clone git@github.com:yutaroo/dotfiles.git ~/Documents/dotfiles
@@ -13,9 +14,9 @@ $ ln -s ~/Documents/dotfiles/.vim ~/.vim
 ```
 ## Create Hard Link for Windows
 ```
-$ mklink /H C:\Users\username\.atom\my-packages.txt C:\Users\username\Documents\dotfiles\.atom\my-packages.txt
-$ mklink /H C:\Users\username\.vimrc C:\Users\username\Documents\dotfiles\.vimrc
-$ mklink /H C:\Users\username\.vim C:\Users\username\Documents\dotfiles\.vim
+$ mklink C:\Users\username\.atom\my-packages.txt C:\Users\username\Documents\dotfiles\.atom\my-packages.txt
+$ mklink C:\Users\username\.vimrc C:\Users\username\Documents\dotfiles\.vimrc
+$ mklink /d C:\Users\username\.vim C:\Users\username\Documents\dotfiles\.vim
 ```
 
 
