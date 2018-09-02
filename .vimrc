@@ -42,16 +42,10 @@ endif
 
 "End dein Scripts-------------------------
 
-" encoding
-set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
-
-" language
-set encoding=utf-8
-scriptencoding utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
+" language & encoding
+set fileencodings=guess,utf-8,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
+set helplang=ja
+set formatexpr=Format_Japanese()
 
 " Appearance
 colorscheme iceberg
