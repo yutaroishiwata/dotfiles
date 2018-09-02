@@ -72,6 +72,11 @@ noremap <S-l> $
 nnoremap <CR> A<CR><ESC>
 nnoremap <Space>n :<C-u>NERDTree<CR>
 nnoremap <Space>p :<C-u>PrevimOpen<CR>
+" Switch active window
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 "prefix key
 nmap <Space> [unite]
