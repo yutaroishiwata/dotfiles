@@ -54,9 +54,32 @@ set cursorline
 set laststatus=2
 set linespace=4
 set list
-set listchars=eol:Â¬,tab:â–¸\
+" set listchars=eol:Ê,tab:?\
 set number
 set numberwidth=5
+
+" Backup
+set nobackup
+set noswapfile
+set undofile
+
+" Indent
+set autoindent
+if exists('&breakindent')
+	set breakindent
+endif
+set noexpandtab
+set nosmartindent
+set shiftround
+set shiftwidth=4
+set tabstop=4
+
+" Misc
+set guioptions-=T
+set guioptions-=L
+set guioptions-=R
+set guioptions-=l
+set guioptions-=m
 
 " Keymaping
 nnoremap ; :
