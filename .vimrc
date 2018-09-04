@@ -13,6 +13,8 @@ if dein#load_state('~/.vim/dein')
  call dein#add('Shougo/deoplete.nvim')
  call dein#add('mattn/emmet-vim')
  call dein#add('scrooloose/nerdtree')
+ call dein#add('ctrlpvim/ctrlp.vim')
+ call dein#add('editorconfig/editorconfig-vim')
  call dein#add('cocopon/colorswatch.vim')
  call dein#add('cocopon/shadeline.vim')
  " markdown
@@ -43,7 +45,9 @@ endif
 "End dein Scripts-------------------------
 
 " language & encoding
-set fileencodings=guess,utf-8,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 set helplang=ja
 set formatexpr=Format_Japanese()
 
@@ -82,10 +86,10 @@ set guioptions-=l
 set guioptions-=m
 
 " Keymaping
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
+" nnoremap ; :
+" nnoremap : ;
+" vnoremap ; :
+" vnoremap : ;
 noremap j gj
 noremap k gk
 noremap <S-h> ^
@@ -100,7 +104,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
 "prefix key
 nmap <Space> [unite]
 " dein
@@ -108,9 +111,11 @@ nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
 
+" Clipboard
+set clipboard+=unnamed
+
 " NERDTree
 autocmd VimEnter * execute 'NERDTree'
-
 
 filetype plugin indent on
 syntax enable
