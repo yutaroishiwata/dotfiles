@@ -58,7 +58,7 @@ set cursorline
 set laststatus=2
 set linespace=4
 set list
-" set listchars=eol:��,tab:?\
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set number
 set numberwidth=5
 
@@ -75,8 +75,8 @@ endif
 set noexpandtab
 set nosmartindent
 set shiftround
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Misc
 set guioptions-=T
