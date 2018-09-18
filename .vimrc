@@ -59,7 +59,7 @@ set cursorline
 set laststatus=2
 set linespace=4
 set list
-set listchars=eol:¬,tab:▸\
+set listchars=eol:¬,tab:-
 set number
 set numberwidth=5
 set showcmd
@@ -93,9 +93,10 @@ set guioptions-=m
 " nnoremap ; :
 " nnoremap : ;
 " vnoremap ; :
-" vnoremap : ;
+" vnoremap : ;"
 noremap j gj
 noremap k gk
+noremap tg g<S-t>
 noremap <S-h> ^
 noremap <S-j> }
 noremap <S-k> {
