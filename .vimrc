@@ -46,7 +46,8 @@ endif
 
 " language & encoding
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+scriptencoding utf-8
+set fileencoding=utf-8
 set fileformats=unix,dos,mac
 set helplang=ja
 set formatexpr=Format_Japanese()
@@ -58,9 +59,12 @@ set cursorline
 set laststatus=2
 set linespace=4
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars=eol:¬,tab:▸\
 set number
 set numberwidth=5
+set showcmd
+set showmatch
+set wrap
 
 " Backup
 set nobackup
