@@ -1,5 +1,5 @@
 " fonts
-set guifont=Ricty_Diminished:h11
+set guifont=Ricty_Diminished:h10
 
 " Appearance
 colorscheme iceberg

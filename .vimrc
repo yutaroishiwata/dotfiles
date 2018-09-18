@@ -65,7 +65,7 @@ set numberwidth=5
 " Backup
 set nobackup
 set noswapfile
-set undofile
+set noundofile
 
 " Indent
 set autoindent
