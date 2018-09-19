@@ -59,7 +59,7 @@ set cursorline
 set laststatus=2
 set linespace=4
 set list
-set listchars=eol:¬,tab:-
+set listchars=eol:¬,tab:▸\ 
 set number
 set numberwidth=5
 set showcmd
@@ -90,10 +90,12 @@ set guioptions-=l
 set guioptions-=m
 
 " Keymaping
-" nnoremap ; :
-" nnoremap : ;
-" vnoremap ; :
-" vnoremap : ;"
+if has('mac')
+	nnoremap ; :
+	nnoremap : ;
+	vnoremap ; :
+	vnoremap : ;
+endif
 noremap j gj
 noremap k gk
 noremap tg g<S-t>
