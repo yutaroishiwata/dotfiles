@@ -74,9 +74,9 @@ set noundofile
 " Indent
 set autoindent
 if exists('&breakindent')
-	set breakindent
+  set breakindent
 endif
-set noexpandtab
+set expandtab
 set nosmartindent
 set shiftround
 set shiftwidth=2
@@ -91,10 +91,10 @@ set guioptions-=m
 
 " Keymaping
 if has('mac')
-	nnoremap ; :
-	nnoremap : ;
-	vnoremap ; :
-	vnoremap : ;
+  nnoremap ; :
+  nnoremap : ;
+  vnoremap ; :
+  vnoremap : ;
 endif
 noremap j gj
 noremap k gk
