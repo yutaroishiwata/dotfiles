@@ -65,8 +65,11 @@ set numberwidth=5
 set showcmd
 set showmatch
 set wrap
+set modifiable
+set write
 
 " Backup
+set hidden
 set nobackup
 set noswapfile
 set noundofile
