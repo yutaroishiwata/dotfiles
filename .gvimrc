@@ -13,20 +13,23 @@ set list
 set number
 set numberwidth=5
 
-function! GuiTabLabel()
-  let l:label = ''
-  let l:bufnrlist = tabpagebuflist(v:lnum)
-  let l:bufname = fnamemodify(bufname(l:bufnrlist[tabpagewinnr(v:lnum) - 1]), ':t')
-  let l:label .= l:bufname == '' ? 'No title' : l:bufname
+" Tab setting
+if has('win32')
+  function! GuiTabLabel()
+    let l:label = ''
+    let l:bufnrlist = tabpagebuflist(v:lnum)
+    let l:bufname = fnamemodify(bufname(l:bufnrlist[tabpagewinnr(v:lnum) - 1]), ':t')
+    let l:label .= l:bufname == '' ? 'No title' : l:bufname
 
-  for bufnr in l:bufnrlist
-    if getbufvar(bufnr, "&modified")
-      let l:label .= '+'
-      break
-    endif
-  endfor
+    for bufnr in l:bufnrlist
+      if getbufvar(bufnr, "&modified")
+        let l:label .= '+'
+        break
+      endif
+    endfor
 
-  return l:label
-endfunction
+    return l:label
+  endfunction
 
-set guitablabel=%N:\ %{GuiTabLabel()}
+  set guitablabel=%N:\ %{GuiTabLabel()}
+endif
