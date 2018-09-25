@@ -24,8 +24,8 @@ $ mklink /d C:\Users\username\.vimfiles C:\Users\username\Documents\dotfiles\.vi
 
 ## Atom Packages Management
 ```
-$ apm list --installed --bare > ~/.atom/my-packages.txt
-$ apm install --packages-file ~/.atom/my-packages.txt
+$ apm list --installed --bare > ~/Documents/dotfiles/.atom/my-packages.txt
+$ apm install --packages-file ~/Documents/dotfiles/.atom/my-packages.txt
 ```
 
 ## dein VIM Setup
