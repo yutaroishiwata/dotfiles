@@ -1,11 +1,7 @@
 " fonts
-<<<<<<< HEAD
-set guifont=Ricty_Diminished:h11
-=======
 if has('win32')
   set guifont=Ricty_Diminished:h10
 endif
->>>>>>> d7e18a49ac660eea11c053c846762ac8c42bd8e8
 
 " Appearance
 colorscheme iceberg
