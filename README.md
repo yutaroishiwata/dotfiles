@@ -10,6 +10,7 @@ $ git clone git@github.com:yutaroo/dotfiles.git ~/Documents/dotfiles
 ```
 $ ln -s ~/Documents/dotfiles/.atom/my-packages.txt ~/.atom/my-packages.txt
 $ ln -s ~/Documents/dotfiles/.vimrc ~/.vimrc
+$ ln -s ~/Documents/dotfiles/.gvimrc ~/.gvimrc
 $ ln -s ~/Documents/dotfiles/.vim ~/.vim
 ```
 ## Create Symbolic Link for Windows
