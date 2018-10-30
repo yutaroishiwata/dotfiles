@@ -1,6 +1,6 @@
-"dein Scripts-----------------------------
+"dein Scripts-----------------------------if &compatible
 if &compatible
- set nocompatible
+  set nocompatible
 endif
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
@@ -14,6 +14,7 @@ if dein#load_state('~/.vim/dein')
  call dein#add('mattn/emmet-vim')
  call dein#add('scrooloose/nerdtree')
  call dein#add('ctrlpvim/ctrlp.vim')
+ call dein#add('rking/ag.vim')
  call dein#add('editorconfig/editorconfig-vim')
  call dein#add('cocopon/colorswatch.vim')
  call dein#add('cocopon/shadeline.vim')

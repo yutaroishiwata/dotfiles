@@ -1,12 +1,13 @@
 # dotfiles
 
 
+
 ## Install
 ```
 $ git clone git@github.com:yutaroo/dotfiles.git ~/Documents/dotfiles
 ```
 
-## Create Symbolic Link for UNIX
+## Create Symbolic Link for Mac
 ```
 $ ln -s ~/Documents/dotfiles/.atom/my-packages.txt ~/.atom/my-packages.txt
 $ ln -s ~/Documents/dotfiles/.vimrc ~/.vimrc
@@ -30,6 +31,7 @@ $ apm install --packages-file ~/Documents/dotfiles/.atom/my-packages.txt
 ```
 
 ## dein VIM Setup
+Using [dein.vim](https://github.com/Shougo/dein.vim) to manage VIM plugins.
 ```
 $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 $ sh ./installer.sh ~/.cache/dein
@@ -37,4 +39,17 @@ $ sh ./installer.sh ~/.cache/dein
 
 ```
 :call dein#install()
+```
+
+## Install The Silver Searcher
+Using [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) to code searching tool.
+
+Mac (Install using brew)
+```
+brew install ag
+```
+
+Windows (Install using scoop)
+```
+scoop install ag
 ```
