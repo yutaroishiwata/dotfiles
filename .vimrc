@@ -8,6 +8,7 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.vim/dein')
  call dein#begin('~/.vim/dein')
  call dein#add('~/.vim/dein')
+ call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
  call dein#add('Shougo/unite.vim')
  call dein#add('Shougo/neomru.vim')
  call dein#add('Shougo/deoplete.nvim')
@@ -94,7 +95,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=m
 
-" Keymaping
+" Keymaping-------------------------
 if has('mac')
   nnoremap ; :
   nnoremap : ;
@@ -111,18 +112,38 @@ noremap <S-l> $
 nnoremap <CR> A<CR><ESC>
 nnoremap <Space>n :<C-u>NERDTree<CR>
 nnoremap <Space>p :<C-u>PrevimOpen<CR>
+
 " Switch active window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"prefix key
-nmap <Space> [unite]
+
 " dein
-nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
+" start insert mode
+let g:unite_enable_start_insert = 1
+" prefix key
+nmap <Space> [unite]
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
-nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
-" fugitive
+nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
+nnoremap <silent> [unite]r :<C-u>Unite<Space>file_mru<CR>
+" Not case sensitive
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+" Grep from the current directory
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" Grep from word at cursor position
+nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" Grep search results recall"
+nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+" Use ag (The Silver Searcher) for unite grep
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+" fugitiv
 
 " Clipboard
 set clipboard+=unnamed
