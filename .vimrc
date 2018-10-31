@@ -16,6 +16,7 @@ if dein#load_state('~/.vim/dein')
  call dein#add('ctrlpvim/ctrlp.vim')
  call dein#add('rking/ag.vim')
  call dein#add('editorconfig/editorconfig-vim')
+ call dein#add('tpope/vim-fugitive')
  call dein#add('cocopon/colorswatch.vim')
  call dein#add('cocopon/shadeline.vim')
  " markdown
@@ -121,6 +122,7 @@ nmap <Space> [unite]
 nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
+" fugitive
 
 " Clipboard
 set clipboard+=unnamed
