@@ -43,6 +43,7 @@ if dein#load_state('~/.vim/dein')
  call dein#add('leafgarland/typescript-vi')
  call dein#add('nikvdp/ejs-syntax')
  call dein#add('posva/vim-vue')
+ call dein#add('Yggdroot/indentLine')
 
  call dein#end()
  call dein#save_state()
@@ -65,7 +66,7 @@ set cursorline
 set laststatus=2
 set linespace=4
 set list
-set listchars=eol:¬,tab:>/ 
+set listchars=eol:¬ 
 set number
 set numberwidth=5
 set showcmd
@@ -165,22 +166,22 @@ nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
 """"""""""""""""""""""""""""""""""""""""
 " neocomplete・neosnippet
 """"""""""""""""""""""""""""""""""""""""
-" Vim起動時にneocompleteを有効にする
+" Enable neocomplete when starting Vim
 let g:neocomplete#enable_at_startup = 1
-" smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
+" Activate smartcase
 let g:neocomplete#enable_smart_case = 1
-" 3文字以上の単語に対して補完を有効にする
+" Enable completion for three or more words
 let g:neocomplete#min_keyword_length = 3
-" 区切り文字まで補完する
+" Complement to the delimiter
 let g:neocomplete#enable_auto_delimiter = 1
-" 1文字目の入力から補完のポップアップを表示
+" Show completed completion from first character input
 let g:neocomplete#auto_completion_start_length = 1
-" バックスペースで補完のポップアップを閉じる
-inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
+" Close complementary popup in backspace
+noremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
 
-" エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定・・・・・・②
+" Confirm completion candidate with enter key.Enpression of snippet also confirmed with enter key
 imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
-" タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
+" Tab key to select completion candidate. Jump in snippet also jump with tab key
 imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
 
