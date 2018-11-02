@@ -122,6 +122,21 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+
+""""""""""""""""""""""""""""""""""""""""
+" ag (The Silver Searcher)
+""""""""""""""""""""""""""""""""""""""""
+if executable('ag')
+  " Use ag for unite grep
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+  " Use ag for ctrlp
+  let g:ctrlp_use_caching=0
+  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+endif
+
+
 """"""""""""""""""""""""""""""""""""""""
 " dein.vim
 """"""""""""""""""""""""""""""""""""""""
@@ -148,7 +163,7 @@ nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""
-" neocomplete・neosnippetの設定
+" neocomplete・neosnippet
 """"""""""""""""""""""""""""""""""""""""
 " Vim起動時にneocompleteを有効にする
 let g:neocomplete#enable_at_startup = 1
@@ -174,22 +189,32 @@ imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosni
 """"""""""""""""""""""""""""""""""""""""
 
 
+""""""""""""""""""""""""""""""""""""""""
+" shadeline 
+""""""""""""""""""""""""""""""""""""""""
+let g:shadeline = {}
+let g:shadeline.active = {
+      \   'left': ['fname', 'flags', 'ShadelineItemGitBranch',],
+      \   'right': ['<', ['ff', 'fenc', 'ft'],'ruler',],
+      \ }
+let g:shadeline.inactive = {
+      \   'left': ['fname', 'flags',],
+      \ }
+
+function! ShadelineItemGitBranch()
+  let name = exists('*fugitive#head')
+        \ ? fugitive#head()
+        \ : ''
+  return empty(name) ? '' : printf('(%s)', name)
+endfunction
+
+
 " Clipboard
 set clipboard+=unnamed
 
 " NERDTree
 autocmd VimEnter * execute 'NERDTree'
 
-" ag (The Silver Searcher)
-if executable('ag')
-  " Use ag for unite grep
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-  " Use ag for ctrlp
-  let g:ctrlp_use_caching=0
-  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
-endif
 
 filetype plugin indent on
 syntax enable
