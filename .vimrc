@@ -15,8 +15,10 @@ if dein#load_state('~/.vim/dein')
  call dein#add('Shougo/neocomplete.vim')
  call dein#add('Shougo/neosnippet')
  call dein#add('Shougo/neosnippet-snippets')
- call dein#add('mattn/emmet-vim')
+ " call dein#add('mattn/emmet-vim')
  call dein#add('scrooloose/nerdtree')
+ call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+ call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
  call dein#add('ctrlpvim/ctrlp.vim')
  call dein#add('rking/ag.vim')
  call dein#add('editorconfig/editorconfig-vim')
@@ -137,12 +139,17 @@ if executable('ag')
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
 
+"if executable('rg')
+"    set grepprg=rg\ --vimgrep\ --no-heading
+"    set grepformat=%f:%l:%c:%m,%f:%l:%m
+"endif
+
 
 """"""""""""""""""""""""""""""""""""""""
-" dein.vim
+" Unite.vim
 """"""""""""""""""""""""""""""""""""""""
 " start insert mode
-let g:unite_enable_start_insert = 1
+" let g:unite_enable_start_insert = 1
 
 " prefix key
 nmap <Space> [unite]
@@ -161,6 +168,7 @@ nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 " Grep search results recall"
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+
 
 
 """"""""""""""""""""""""""""""""""""""""
