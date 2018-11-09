@@ -127,6 +127,13 @@ nnoremap <C-l> <C-w>l
 
 
 """"""""""""""""""""""""""""""""""""""""
+" fzf
+""""""""""""""""""""""""""""""""""""""""
+nnoremap ; :Buffers<CR>
+nnoremap t :Files<CR>
+nnoremap r :Tags<CR>
+
+""""""""""""""""""""""""""""""""""""""""
 " ag (The Silver Searcher)
 """"""""""""""""""""""""""""""""""""""""
 if executable('ag')
