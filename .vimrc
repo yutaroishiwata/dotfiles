@@ -129,9 +129,9 @@ nnoremap <C-l> <C-w>l
 """"""""""""""""""""""""""""""""""""""""
 " fzf
 """"""""""""""""""""""""""""""""""""""""
-nnoremap ; :Buffers<CR>
-nnoremap t :Files<CR>
-nnoremap r :Tags<CR>
+nnoremap ; :<C-u>Buffers<CR>
+nnoremap t :<C-u>Files<CR>
+nnoremap r :<C-u>Tags<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " ag (The Silver Searcher)
