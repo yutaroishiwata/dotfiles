@@ -51,7 +51,7 @@ if dein#load_state('~/.vim/dein')
  call dein#save_state()
 endif
 
-"End dein Scripts-------------------------
+"End dein Scripts------------------------------------------------------------
 
 " language & encoding
 set encoding=utf-8
@@ -101,7 +101,12 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=m
 
-" Keymaping-------------------------
+" Clipboard
+set clipboard+=unnamed
+
+
+" Keymaping-------------------------------------------------------------------
+
 if has('mac')
   nnoremap ; :
   nnoremap : ;
@@ -126,12 +131,15 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 
+" Plugins---------------------------------------------------------------------
+
 """"""""""""""""""""""""""""""""""""""""
 " fzf
 """"""""""""""""""""""""""""""""""""""""
-nnoremap ; :<C-u>Buffers<CR>
-nnoremap t :<C-u>Files<CR>
-nnoremap r :<C-u>Tags<CR>
+"nnoremap ; :<C-u>Buffers<CR>
+"nnoremap t :<C-u>Files<CR>
+"nnoremap r :<C-u>Tags<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""
 " ag (The Silver Searcher)
@@ -146,6 +154,10 @@ if executable('ag')
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
 
+
+""""""""""""""""""""""""""""""""""""""""
+" ripgrep
+""""""""""""""""""""""""""""""""""""""""
 "if executable('rg')
 "    set grepprg=rg\ --vimgrep\ --no-heading
 "    set grepformat=%f:%l:%c:%m,%f:%l:%m
@@ -175,7 +187,6 @@ nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 " Grep search results recall"
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
-
 
 
 """"""""""""""""""""""""""""""""""""""""
@@ -225,10 +236,9 @@ function! ShadelineItemGitBranch()
 endfunction
 
 
-" Clipboard
-set clipboard+=unnamed
-
+""""""""""""""""""""""""""""""""""""""""
 " NERDTree
+""""""""""""""""""""""""""""""""""""""""
 autocmd VimEnter * execute 'NERDTree'
 
 
