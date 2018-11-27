@@ -23,6 +23,7 @@ if dein#load_state('~/.vim/dein')
  call dein#add('rking/ag.vim')
  call dein#add('editorconfig/editorconfig-vim')
  call dein#add('tpope/vim-fugitive')
+ call dein#add('airblade/vim-gitgutter')
  call dein#add('cocopon/colorswatch.vim')
  call dein#add('cocopon/shadeline.vim')
  " markdown
@@ -51,7 +52,7 @@ if dein#load_state('~/.vim/dein')
  call dein#save_state()
 endif
 
-"End dein Scripts------------------------------------------------------------
+"End dein Scripts-------------------------------------------------------------
 
 " language & encoding
 set encoding=utf-8
@@ -212,6 +213,11 @@ imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosni
 
 
 """"""""""""""""""""""""""""""""""""""""
+" ctrlpvim 
+""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""
 " fugitiv
 """"""""""""""""""""""""""""""""""""""""
 
@@ -240,6 +246,8 @@ endfunction
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""
 autocmd VimEnter * execute 'NERDTree'
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = '∨'
 
 
 filetype plugin indent on
