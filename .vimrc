@@ -68,6 +68,7 @@ set background=dark
 set cursorline
 set laststatus=2
 set linespace=4
+
 set list
 set listchars=eol:¬ 
 set number
@@ -77,6 +78,7 @@ set showmatch
 set wrap
 set modifiable
 set write
+set updatetime=100
 
 " Backup
 set hidden
@@ -219,6 +221,11 @@ imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosni
 
 """"""""""""""""""""""""""""""""""""""""
 " fugitiv
+""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""
+" gitgutter
 """"""""""""""""""""""""""""""""""""""""
 
 
