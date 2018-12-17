@@ -15,10 +15,7 @@ if dein#load_state('~/.vim/dein')
  call dein#add('Shougo/neocomplete.vim')
  call dein#add('Shougo/neosnippet')
  call dein#add('Shougo/neosnippet-snippets')
- " call dein#add('mattn/emmet-vim')
  call dein#add('scrooloose/nerdtree')
- call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
- call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
  call dein#add('ctrlpvim/ctrlp.vim')
  call dein#add('rking/ag.vim')
  call dein#add('editorconfig/editorconfig-vim')
@@ -26,6 +23,9 @@ if dein#load_state('~/.vim/dein')
  call dein#add('airblade/vim-gitgutter')
  call dein#add('cocopon/colorswatch.vim')
  call dein#add('cocopon/shadeline.vim')
+ "call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+ "call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+ " call dein#add('mattn/emmet-vim')
  " markdown
  call dein#add('plasticboy/vim-markdown')
  call dein#add('kannokanno/previm')
@@ -126,12 +126,16 @@ noremap <S-l> $
 nnoremap <CR> A<CR><ESC>
 nnoremap <Space>n :<C-u>NERDTree<CR>
 nnoremap <Space>p :<C-u>PrevimOpen<CR>
-
 " Switch active window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" window size
+nnoremap + 4<C-w>+
+nnoremap - 4<C-w>-
+nnoremap { 4<C-w><
+nnoremap } 4<C-w>>
 
 
 " Plugins---------------------------------------------------------------------
