@@ -19,6 +19,7 @@ if dein#load_state('~/.vim/dein')
  call dein#add('ctrlpvim/ctrlp.vim')
  call dein#add('rking/ag.vim')
  call dein#add('editorconfig/editorconfig-vim')
+ call dein#add('csscomb/vim-csscomb')
  call dein#add('tpope/vim-fugitive')
  call dein#add('airblade/vim-gitgutter')
  call dein#add('cocopon/colorswatch.vim')
@@ -79,6 +80,9 @@ set wrap
 set modifiable
 set write
 set updatetime=100
+" JSON double quote display
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
 
 " Backup
 set hidden
@@ -126,6 +130,7 @@ noremap <S-l> $
 nnoremap <CR> A<CR><ESC>
 nnoremap <Space>n :<C-u>NERDTree<CR>
 nnoremap <Space>p :<C-u>PrevimOpen<CR>
+" vnoremap <silent> <C-p> "0p<CR>
 " Switch active window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -175,7 +180,7 @@ endif
 " Unite.vim
 """"""""""""""""""""""""""""""""""""""""
 " start insert mode
-" let g:unite_enable_start_insert = 1
+let g:unite_enable_start_insert = 1
 
 " prefix key
 nmap <Space> [unite]

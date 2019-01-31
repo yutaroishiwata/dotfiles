@@ -1,6 +1,6 @@
 " fonts
 if has('win32')
-  set guifont=Ricty_Diminished:h10
+  set guifont=Ricty_Diminished:h9
 endif
 
 " Appearance
