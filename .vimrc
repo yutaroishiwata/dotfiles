@@ -222,6 +222,10 @@ imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : 
 " Tab key to select completion candidate. Jump in snippet also jump with tab key
 imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
+""""""""""""""""""""""""""""""""""""""""
+"  csscomb
+""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
 
 """"""""""""""""""""""""""""""""""""""""
 " ctrlpvim 
