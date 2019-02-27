@@ -2,6 +2,7 @@
 if has('win32')
   set guifont=Ricty_Diminished:h9
 endif
+set rop=type:directx
 
 " Appearance
 colorscheme iceberg

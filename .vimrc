@@ -225,7 +225,7 @@ imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosni
 """"""""""""""""""""""""""""""""""""""""
 "  csscomb
 """"""""""""""""""""""""""""""""""""""""
-autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
+" autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
 
 """"""""""""""""""""""""""""""""""""""""
 " ctrlpvim 
@@ -266,8 +266,8 @@ endfunction
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""
 autocmd VimEnter * execute 'NERDTree'
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = '∨'
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 
 filetype plugin indent on
