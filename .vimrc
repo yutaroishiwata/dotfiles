@@ -22,7 +22,7 @@ if dein#load_state('~/.vim/dein')
  call dein#add('csscomb/vim-csscomb')
  call dein#add('tpope/vim-fugitive')
  call dein#add('airblade/vim-gitgutter')
- call dein#add('cocopon/colorswatch.vim')
+ call dein#add('cocopon/cholorswatch.vim')
  call dein#add('cocopon/shadeline.vim')
  "call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
  "call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
@@ -63,15 +63,8 @@ set fileformats=unix,mac
 set helplang=ja
 set formatexpr=Format_Japanese()
 
-" Appearance
-colorscheme iceberg
-set background=dark
-set cursorline
-set laststatus=2
-set linespace=4
-
 set list
-set listchars=eol:¬ 
+"set listchars=eol:¬ 
 set number
 set numberwidth=5
 set showcmd
@@ -79,18 +72,19 @@ set showmatch
 set wrap
 set modifiable
 set write
+set hlsearch
 set updatetime=100
-" JSON double quote display
+" json double quote display
 set conceallevel=0
 let g:vim_json_syntax_conceal = 0
 
-" Backup
+" backup
 set hidden
 set nobackup
 set noswapfile
 set noundofile
 
-" Indent
+" indent
 set autoindent
 if exists('&breakindent')
   set breakindent
@@ -101,18 +95,18 @@ set shiftround
 set shiftwidth=2
 set tabstop=2
 
-" Misc
-set guioptions-=T
-set guioptions-=L
-set guioptions-=R
+" misc
+set guioptions-=t
+set guioptions-=l
+set guioptions-=r
 set guioptions-=l
 set guioptions-=m
 
-" Clipboard
+" clipboard
 set clipboard+=unnamed
 
 
-" Keymaping-------------------------------------------------------------------
+" keymaping-------------------------------------------------------------------
 
 if has('mac')
   nnoremap ; :
@@ -122,42 +116,42 @@ if has('mac')
 endif
 noremap j gj
 noremap k gk
-noremap tg g<S-t>
-noremap <S-h> ^
-noremap <S-j> }
-noremap <S-k> {
-noremap <S-l> $
-nnoremap <CR> A<CR><ESC>
-nnoremap <Space>n :<C-u>NERDTree<CR>
-nnoremap <Space>p :<C-u>PrevimOpen<CR>
-" vnoremap <silent> <C-p> "0p<CR>
-" Switch active window
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+noremap tg g<s-t>
+noremap <s-h> ^
+noremap <s-j> }
+noremap <s-k> {
+noremap <s-l> $
+nnoremap <cr> a<cr><esc>
+nnoremap <space>n :<c-u>NERDTree<cr>
+nnoremap <space>p :<c-u>previmopen<cr>
+" vnoremap <silent> <c-p> "0p<cr>
+" switch active window
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 " window size
-nnoremap + 4<C-w>+
-nnoremap - 4<C-w>-
-nnoremap { 4<C-w><
-nnoremap } 4<C-w>>
+nnoremap + 4<c-w>+
+nnoremap - 4<c-w>-
+nnoremap { 4<c-w><
+nnoremap } 4<c-w>>
 
 
-" Plugins---------------------------------------------------------------------
+" plugins---------------------------------------------------------------------
 
 """"""""""""""""""""""""""""""""""""""""
 " fzf
 """"""""""""""""""""""""""""""""""""""""
-"nnoremap ; :<C-u>Buffers<CR>
-"nnoremap t :<C-u>Files<CR>
-"nnoremap r :<C-u>Tags<CR>
+"nnoremap ; :<c-u>buffers<cr>
+"nnoremap t :<c-u>files<cr>
+"nnoremap r :<c-u>tags<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""
-" ag (The Silver Searcher)
+" ag (the silver searcher)
 """"""""""""""""""""""""""""""""""""""""
 if executable('ag')
-  " Use ag for unite grep
+  " use ag for unite grep
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
@@ -243,7 +237,7 @@ imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosni
 
 
 """"""""""""""""""""""""""""""""""""""""
-" shadeline 
+" shadep/ine 
 """"""""""""""""""""""""""""""""""""""""
 let g:shadeline = {}
 let g:shadeline.active = {

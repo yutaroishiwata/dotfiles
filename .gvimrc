@@ -1,8 +1,9 @@
 " fonts
 if has('win32')
-  set guifont=Ricty_Diminished:h9
+  set guifont=Monaco:h16
+else
+  set guifont=SourceCodePro-Regular:h12
 endif
-set rop=type:directx
 
 " Appearance
 colorscheme iceberg
