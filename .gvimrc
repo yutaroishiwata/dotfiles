@@ -6,7 +6,7 @@ else
 endif
 
 " Appearance
-colorscheme iceberg
+colorscheme molokai
 set background=dark
 set cursorline
 set laststatus=2

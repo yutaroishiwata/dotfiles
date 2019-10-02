@@ -64,7 +64,7 @@ set helplang=ja
 set formatexpr=Format_Japanese()
 
 set list
-set listchars=eol:
+set listchars=eol:¬
 set number
 set numberwidth=3
 set showcmd
