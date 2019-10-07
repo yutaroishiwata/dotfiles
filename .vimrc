@@ -135,6 +135,9 @@ nnoremap + 4<c-w>+
 nnoremap - 4<c-w>-
 nnoremap { 4<c-w><
 nnoremap } 4<c-w>>
+" split window
+nnoremap ss :<c-u>split<Return><C-w>w
+nnoremap sv :<c-u>vsplit<Return><C-w>w
 
 
 " plugins---------------------------------------------------------------------
