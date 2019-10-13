@@ -107,7 +107,6 @@ set clipboard+=unnamed
 
 
 " keymaping-------------------------------------------------------------------
-
 if has('mac')
   nnoremap ; :
   nnoremap : ;
@@ -124,7 +123,6 @@ noremap <s-l> $
 nnoremap <cr> a<cr><esc>
 nnoremap <space>n :<c-u>NERDTree<cr>
 nnoremap <space>p :<c-u>previmopen<cr>
-" vnoremap <silent> <c-p> "0p<cr>
 " switch active window
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
@@ -135,10 +133,9 @@ nnoremap + 4<c-w>+
 nnoremap - 4<c-w>-
 nnoremap { 4<c-w><
 nnoremap } 4<c-w>>
-" split window
+" split pane
 nnoremap ss :<c-u>split<Return><C-w>w
 nnoremap sv :<c-u>vsplit<Return><C-w>w
-
 
 " plugins---------------------------------------------------------------------
 
@@ -262,7 +259,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""
-autocmd VimEnter * execute 'NERDTree'
+" autocmd VimEnter * execute 'NERDTree'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
