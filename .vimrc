@@ -22,8 +22,8 @@ if dein#load_state('~/.vim/dein')
  call dein#add('csscomb/vim-csscomb')
  call dein#add('tpope/vim-fugitive')
  call dein#add('airblade/vim-gitgutter')
- call dein#add('cocopon/cholorswatch.vim')
- call dein#add('cocopon/shadeline.vim')
+ call dein#add('vim-airline/vim-airline')
+ "call dein#add('cocopon/shadeline.vim')
  "call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
  "call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
  " call dein#add('mattn/emmet-vim')
@@ -255,6 +255,9 @@ function! ShadelineItemGitBranch()
   return empty(name) ? '' : printf('(%s)', name)
 endfunction
 
+""""""""""""""""""""""""""""""""""""""""
+" Airline
+""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""
 " NERDTree
