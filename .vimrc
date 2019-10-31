@@ -105,16 +105,6 @@ set guioptions-=m
 " clipboard
 set clipboard+=unnamed
 
-" Appearance
-colorscheme nord
-set background=dark
-set cursorline
-set laststatus=2
-set linespace=4
-set list
-set number
-set numberwidth=5
-
 " keymaping-------------------------------------------------------------------
 if has('mac')
   nnoremap ; :
