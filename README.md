@@ -30,12 +30,7 @@ Install plugins
 ## Install The Silver Searcher
 Using [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) to code searching tool.
 
-Mac (Install using brew)
+Install using brew
 ```
 brew install ag
-```
-
-Windows (Install using scoop)
-```
-scoop install ag
 ```
