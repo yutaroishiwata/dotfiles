@@ -1,57 +1,45 @@
-"dein Scripts-----------------------------if &compatible
-if &compatible
-  set nocompatible
-endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.vim/dein')
- call dein#begin('~/.vim/dein')
- call dein#add('~/.vim/dein')
- call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
- call dein#add('Shougo/unite.vim')
- call dein#add('Shougo/neomru.vim')
- call dein#add('Shougo/deoplete.nvim')
- call dein#add('Shougo/neocomplete.vim')
- call dein#add('Shougo/neosnippet')
- call dein#add('Shougo/neosnippet-snippets')
- call dein#add('scrooloose/nerdtree')
- call dein#add('ctrlpvim/ctrlp.vim')
- call dein#add('rking/ag.vim')
- call dein#add('editorconfig/editorconfig-vim')
- call dein#add('csscomb/vim-csscomb')
- call dein#add('tpope/vim-fugitive')
- call dein#add('airblade/vim-gitgutter')
- call dein#add('vim-airline/vim-airline')
- "call dein#add('cocopon/shadeline.vim')
- "call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
- "call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
- " call dein#add('mattn/emmet-vim')
+call plug#begin('~/.vim/plugged')
+ Plug '~/.vim/dein'
+ Plug 'Shougo/vimproc.vim', {'build' : 'make'}
+ Plug 'Shougo/unite.vim'
+ Plug 'Shougo/neomru.vim'
+ Plug 'Shougo/deoplete.nvim'
+ Plug 'Shougo/neocomplete.vim'
+ Plug 'Shougo/neosnippet'
+ Plug 'Shougo/neosnippet-snippets'
+ Plug 'scrooloose/nerdtree'
+ Plug 'ctrlpvim/ctrlp.vim'
+ Plug 'rking/ag.vim'
+ Plug 'editorconfig/editorconfig-vim'
+ Plug 'csscomb/vim-csscomb'
+ Plug 'tpope/vim-fugitive'
+ Plug 'airblade/vim-gitgutter'
+ Plug 'vim-airline/vim-airline'
+ "Plug 'cocopon/shadeline.vim'
+ "Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
+ "Plug 'junegunn/fzf.vim', { 'depends': 'fzf' }
+ " Plug 'mattn/emmet-vim'
  " markdown
- call dein#add('plasticboy/vim-markdown')
- call dein#add('kannokanno/previm')
- call dein#add('tyru/open-browser.vim')
+ Plug 'plasticboy/vim-markdown'
+ Plug 'kannokanno/previm'
+ Plug 'tyru/open-browser.vim'
  if !has('nvim')
-   call dein#add('roxma/nvim-yarp')
-   call dein#add('roxma/vim-hug-neovim-rpc')
+   Plug 'roxma/nvim-yarp'
+   Plug 'roxma/vim-hug-neovim-rpc'
  endif
 
  " Syntax
- call dein#add('jiangmiao/simple-javascript-indenter')
- call dein#add('jelera/vim-javascript-syntax')
- call dein#add('kchmck/vim-coffee-script')
- call dein#add('tpope/vim-haml')
- call dein#add('groenewege/vim-less')
- call dein#add('wavded/vim-stylus')
- call dein#add('digitaltoad/vim-jade')
- call dein#add('leafgarland/typescript-vi')
- call dein#add('nikvdp/ejs-syntax')
- call dein#add('posva/vim-vue')
- call dein#add('Yggdroot/indentLine')
-
- call dein#end()
- call dein#save_state()
-endif
+ Plug 'jiangmiao/simple-javascript-indenter'
+ Plug 'jelera/vim-javascript-syntax'
+ Plug 'kchmck/vim-coffee-script'
+ Plug 'tpope/vim-haml'
+ Plug 'groenewege/vim-less'
+ Plug 'wavded/vim-stylus'
+ Plug 'digitaltoad/vim-jade'
+ Plug 'nikvdp/ejs-syntax'
+ Plug 'posva/vim-vue'
+ Plug 'Yggdroot/indentLine'
+call plug#end()
 
 "End dein Scripts-------------------------------------------------------------
 
@@ -136,7 +124,7 @@ nnoremap } 4<c-w>>
 nnoremap ss :<c-u>split<Return><C-w>w
 nnoremap sv :<c-u>vsplit<Return><C-w>w
 
-" plugins---------------------------------------------------------------------
+" Plugins---------------------------------------------------------------------
 
 """"""""""""""""""""""""""""""""""""""""
 " fzf

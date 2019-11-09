@@ -5,6 +5,7 @@ packages
 dev
 storage
 .vim/dein
+.vim/plugged
 .apm
 .node-gyp
 .npm
