@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
- Plug '~/.vim/dein'
  Plug 'Shougo/vimproc.vim', {'build' : 'make'}
  Plug 'Shougo/unite.vim'
  Plug 'Shougo/neomru.vim'
@@ -40,8 +39,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'posva/vim-vue'
  Plug 'Yggdroot/indentLine'
 call plug#end()
-
-"End dein Scripts-------------------------------------------------------------
 
 " language & encoding
 set encoding=utf-8
