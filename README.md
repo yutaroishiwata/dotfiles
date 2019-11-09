@@ -4,41 +4,27 @@
 
 ## Install
 ```
-$ git clone git@github.com:yutaroo/dotfiles.git ~/Documents/dotfiles
+$ git clone git@github.com:yutaroishiwata/dotfiles.git ~/Documents/dotfiles
 ```
 
-## Create Symbolic Link for Mac
+## Create Symbolic Link
 ```
-$ ln -s ~/Documents/dotfiles/.atom/my-packages.txt ~/.atom/my-packages.txt
-$ ln -s ~/Documents/dotfiles/.vimrc ~/.vimrc
-$ ln -s ~/Documents/dotfiles/.gvimrc ~/.gvimrc
-$ ln -s ~/Documents/dotfiles/.vim ~/.vim
-```
-## Create Symbolic Link for Windows
-```
-$ mklink C:\Users\username\.atom\my-packages.txt C:\Users\username\Documents\dotfiles\.atom\my-packages.txt
-$ mklink C:\Users\username\.vimrc C:\Users\username\Documents\dotfiles\.vimrc
-$ mklink C:\Users\username\.gvimrc C:\Users\username\Documents\dotfiles\.gvimrc
-$ mklink /d C:\Users\username\.vim C:\Users\username\Documents\dotfiles\.vim
-$ mklink /d C:\Users\username\.vimfiles C:\Users\username\Documents\dotfiles\.vimfiles
+$ ln -s ~/Developments/dotfiles/.vimrc ~/
+$ ln -s ~/Developments/dotfiles/.gvimrc ~/
+$ ln -s ~/Developments/dotfiles/.tmux.conf ~/
+$ ln -s ~/Developments/dotfiles/.bashrc ~/
+$ ln -s ~/Developments/dotfiles/.zshrc ~/
 ```
 
-
-## Atom Packages Management
+## vim-plug Setup
+Using [vim-plug](https://github.com/junegunn/vim-plug) to manage VIM plugins.
 ```
-$ apm list --installed --bare > ~/Documents/dotfiles/.atom/my-packages.txt
-$ apm install --packages-file ~/Documents/dotfiles/.atom/my-packages.txt
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-
-## dein VIM Setup
-Using [dein.vim](https://github.com/Shougo/dein.vim) to manage VIM plugins.
+Install plugins
 ```
-$ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-$ sh ./installer.sh ~/.cache/dein
-```
-
-```
-:call dein#install()
+:PlugInstall
 ```
 
 ## Install The Silver Searcher
