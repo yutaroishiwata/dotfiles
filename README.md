@@ -4,7 +4,7 @@
 
 ## Install
 ```
-$ git clone git@github.com:yutaroishiwata/dotfiles.git ~/Documents/dotfiles
+$ git clone git@github.com:yutaroishiwata/dotfiles.git ~/Developments/dotfiles
 ```
 
 ## Create Symbolic Link
