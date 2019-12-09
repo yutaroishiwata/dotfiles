@@ -1,7 +1,5 @@
 # dotfiles
 
-![dotfiles](https://user-images.githubusercontent.com/28632796/52785799-3d1f3e80-309c-11e9-9d6d-70a00025de5c.png)
-
 ## Install
 ```
 $ git clone git@github.com:yutaroishiwata/dotfiles.git ~/Developments/dotfiles
