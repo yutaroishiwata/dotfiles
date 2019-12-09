@@ -14,6 +14,8 @@ $ ln -s ~/Developments/dotfiles/.gvimrc ~/
 $ ln -s ~/Developments/dotfiles/.tmux.conf ~/
 $ ln -s ~/Developments/dotfiles/.bashrc ~/
 $ ln -s ~/Developments/dotfiles/.zshrc ~/
+$ ln -s ~/Developments/dotfiles/.gitconfig ~/
+$ ln -s ~/Developments/dotfiles/.gitignore ~/
 ```
 
 ## vim-plug Setup
