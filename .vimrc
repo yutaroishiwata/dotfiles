@@ -59,6 +59,7 @@ set modifiable
 set write
 set hlsearch
 set updatetime=100
+set ignorecase
 " json double quote display
 set conceallevel=0
 let g:vim_json_syntax_conceal = 0
