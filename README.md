@@ -7,13 +7,13 @@ $ git clone git@github.com:yutaroishiwata/dotfiles.git ~/Developments/dotfiles
 
 ## Create Symbolic Link
 ```
-$ ln -s ~/Developments/dotfiles/.vimrc ~/
-$ ln -s ~/Developments/dotfiles/.gvimrc ~/
-$ ln -s ~/Developments/dotfiles/.tmux.conf ~/
-$ ln -s ~/Developments/dotfiles/.bashrc ~/
-$ ln -s ~/Developments/dotfiles/.zshrc ~/
-$ ln -s ~/Developments/dotfiles/.gitconfig ~/
-$ ln -s ~/Developments/dotfiles/.gitignore ~/
+$ ln -s ~/Documents/dotfiles/.vimrc ~/
+$ ln -s ~/Documents/dotfiles/.gvimrc ~/
+$ ln -s ~/Documents/dotfiles/.tmux.conf ~/
+$ ln -s ~/Documents/dotfiles/.bashrc ~/
+$ ln -s ~/Documents/dotfiles/.zshrc ~/
+$ ln -s ~/Documents/dotfiles/.gitconfig ~/
+$ ln -s ~/Documents/dotfiles/.gitignore ~/
 ```
 
 ## vim-plug Setup
