@@ -250,7 +250,7 @@ endfunction
 " autocmd VimEnter * execute 'NERDTree'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-
+let NERDTreeShowHidden=1
 
 filetype plugin indent on
 syntax enable
