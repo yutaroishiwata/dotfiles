@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'tpope/vim-fugitive'
  Plug 'airblade/vim-gitgutter'
  Plug 'vim-airline/vim-airline'
+ Plug 'zxqfl/tabnine-vim'
  "Plug 'cocopon/shadeline.vim'
  "Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
  "Plug 'junegunn/fzf.vim', { 'depends': 'fzf' }
