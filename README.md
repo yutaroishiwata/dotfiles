@@ -13,7 +13,7 @@ $ ln -s ~/Documents/dotfiles/.tmux.conf ~/
 $ ln -s ~/Documents/dotfiles/.bashrc ~/
 $ ln -s ~/Documents/dotfiles/.zshrc ~/
 $ ln -s ~/Documents/dotfiles/.gitconfig ~/
-$ ln -s ~/Documents/dotfiles/.gitignore ~/
+$ ln -s ~/Documents/dotfiles/.gitignore_global ~/
 ```
 
 ## vim-plug Setup
