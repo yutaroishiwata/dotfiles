@@ -34,3 +34,11 @@ Install using brew
 ```
 brew install ag
 ```
+## My Cheat Sheets
+### Command Cheat Sheets
+- [Git Commands](https://github.com/yutaroishiwata/dotfiles/wiki/Git-Commands)
+- [Vim Commands](https://github.com/yutaroishiwata/dotfiles/wiki/Vim-Commands)
+- [tmux Commands](https://github.com/yutaroishiwata/dotfiles/wiki/tmux-Commands)
+
+### General Settings
+- [My Mac Setup](https://github.com/yutaroishiwata/dotfiles/wiki/My-Mac-setup)
