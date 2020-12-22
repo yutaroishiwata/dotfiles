@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'Shougo/neosnippet'
  Plug 'Shougo/neosnippet-snippets'
  Plug 'scrooloose/nerdtree'
+ Plug 'jiangmiao/auto-pairs'
  Plug 'editorconfig/editorconfig-vim'
  Plug 'csscomb/vim-csscomb'
  Plug 'airblade/vim-gitgutter'
@@ -159,14 +160,15 @@ imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosni
 """"""""""""""""""""""""""""""""""""""""
 " deoplete
 """"""""""""""""""""""""""""""""""""""""
-" Use deoplete.
+" Use deoplete
 let g:deoplete#enable_at_startup = 1
 
 """"""""""""""""""""""""""""""""""""""""
-"  csscomb
+" auto-pairs
 """"""""""""""""""""""""""""""""""""""""
-" autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
-
+" use auto-pairs
+let g:AutoPairsFlyMode = 1 
+ 
 """"""""""""""""""""""""""""""""""""""""
 " Airline
 """"""""""""""""""""""""""""""""""""""""
@@ -182,3 +184,9 @@ let NERDTreeShowHidden=1
 
 filetype plugin indent on
 syntax enable
+
+""""""""""""""""""""""""""""""""""""""""
+"  csscomb
+""""""""""""""""""""""""""""""""""""""""
+" autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
+
