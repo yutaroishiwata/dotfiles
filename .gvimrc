@@ -1,13 +1,13 @@
 " fonts
 if has('win32')
-  set guifont=Monaco:h16
+  set guifont=Monaco:h15
 else
   set guifont=SourceCodePro-Regular:h12
 endif
 
 " Appearance
-colorscheme molokai
-set background=dark
+colorscheme onehalflight
+set background=light
 set cursorline
 set laststatus=2
 set linespace=4
