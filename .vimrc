@@ -1,19 +1,17 @@
 call plug#begin('~/.vim/plugged')
  Plug 'Shougo/vimproc.vim', {'build' : 'make'}
  Plug 'Shougo/unite.vim'
- Plug 'Shougo/deoplete.nvim'
- Plug 'Shougo/neosnippet'
- Plug 'Shougo/neosnippet-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'jiangmiao/auto-pairs'
- Plug 'editorconfig/editorconfig-vim'
- Plug 'csscomb/vim-csscomb'
  Plug 'airblade/vim-gitgutter'
  Plug 'vim-airline/vim-airline'
-if !has('nvim')
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ " Plug 'editorconfig/editorconfig-vim'
+ " Plug 'csscomb/vim-csscomb'
+ if !has('nvim')
+   Plug 'roxma/nvim-yarp'
+   Plug 'roxma/vim-hug-neovim-rpc'
+ endif
 
  " Syntax
  Plug 'jiangmiao/simple-javascript-indenter'
@@ -78,6 +76,9 @@ set guioptions-=m
 
 " clipboard
 set clipboard+=unnamed
+
+" grep
+autocmd QuickFixCmdPost *grep* cwindow
 
 " keymaping-------------------------------------------------------------------
 if has('mac')
@@ -158,10 +159,10 @@ imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : 
 imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
 """"""""""""""""""""""""""""""""""""""""
-" deoplete
+" coc
 """"""""""""""""""""""""""""""""""""""""
 " Use deoplete
-let g:deoplete#enable_at_startup = 1
+let g:coc_node_path = '~/.nodebrew/current/bin/node'
 
 """"""""""""""""""""""""""""""""""""""""
 " auto-pairs
@@ -189,4 +190,3 @@ syntax enable
 "  csscomb
 """"""""""""""""""""""""""""""""""""""""
 " autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
-
