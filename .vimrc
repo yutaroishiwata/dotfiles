@@ -140,23 +140,6 @@ nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
 """"""""""""""""""""""""""""""""""""""""
 " neosnippet
 """"""""""""""""""""""""""""""""""""""""
-" Enable neocomplete when starting Vim
-let g:neocomplete#enable_at_startup = 1
-" Activate smartcase
-let g:neocomplete#enable_smart_case = 1
-" Enable completion for three or more words
-let g:neocomplete#min_keyword_length = 3
-" Complement to the delimiter
-let g:neocomplete#enable_auto_delimiter = 1
-" Show completed completion from first character input
-let g:neocomplete#auto_completion_start_length = 1
-" Close complementary popup in backspace
-noremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
-
-" Confirm completion candidate with enter key.Enpression of snippet also confirmed with enter key
-imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
-" Tab key to select completion candidate. Jump in snippet also jump with tab key
-imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
 """"""""""""""""""""""""""""""""""""""""
 " coc
