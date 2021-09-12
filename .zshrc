@@ -1,6 +1,6 @@
-# Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# RVM
+source ~/.rvm/scripts/rvm
+export PATH="$PATH:$HOME/.rvm/bin"
 # Homebrew
 typeset -U path PATH
 path=(
