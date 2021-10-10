@@ -15,6 +15,26 @@ set list
 set number
 set numberwidth=5
 
+" Terminal colos
+let g:terminal_ansi_colors = [
+\ '#383a42',
+\ '#e45649',
+\ '#50a14f',
+\ '#c18401',
+\ '#0184bc',
+\ '#a626a4',
+\ '#0997b3',
+\ '#fafafa',
+\ '#4f525e',
+\ '#e06c75',
+\ '#98c379',
+\ '#e5c07b',
+\ '#61afef',
+\ '#c678dd',
+\ '#56b6c2',
+\ '#ffffff',
+\ ]
+
 " Tab setting
 if has('win32')
   function! GuiTabLabel()
