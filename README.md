@@ -42,6 +42,11 @@ Install using brew
 ```
 brew install ag
 ```
+
+## Appearance
+- Font: [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+- Color scheme: [One Half](https://github.com/sonph/onehalf)
+
 ## My Cheat Sheets
 ### Command Cheat Sheets
 - [Git Commands](https://github.com/yutaroishiwata/dotfiles/wiki/Git-Commands)
