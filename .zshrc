@@ -1,12 +1,9 @@
 # RVM
 source ~/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin"
-# Homebrew
-typeset -U path PATH
-path=(
-  /opt/homebrew/bin(N-/)
-  /usr/local/bin(N-/)
-  $path
-)
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv/shims"
+export PATH="$PYENV_ROOT:$PATH"
+export PIPENV_PYTHON="$PYENV_ROOT/python"

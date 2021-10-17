@@ -1,21 +1,28 @@
 [core]
-    pager = less -q -R
-    excludesfile = ~/.gitignore
-    excludesfile = ~/.gitignore_global
-    preloadindex = true
+  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
+  preloadindex = true
 
 [color]
-    ui = auto
+  ui = auto
 
 [alias]
-    st = status
-    co = checkout
-    logg = log --graph --all --decorate
+  st = status
+  co = checkout
+  br = branch
+  logg = log --graph --all --decorate
+
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+
 [user]
-	name = Yutaro Ishiwata
-	email = yutaro.ishiwata@gmail.com
+  name = Yutaro Ishiwata
+  email = yutaro.ishiwata@gmail.com
+
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
