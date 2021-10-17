@@ -27,6 +27,14 @@ Install plugins
 :PlugInstall
 ```
 
+## Install tig
+Using [tig](https://github.com/ggreer/the_silver_searcher) to manipulate git repositories on CLI.
+
+Install using brew
+```
+brew install tig
+```
+
 ## Install The Silver Searcher
 Using [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) to code searching tool.
 
@@ -34,6 +42,11 @@ Install using brew
 ```
 brew install ag
 ```
+
+## Appearance
+- Font: [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+- Color scheme: [One Half](https://github.com/sonph/onehalf)
+
 ## My Cheat Sheets
 ### Command Cheat Sheets
 - [Git Commands](https://github.com/yutaroishiwata/dotfiles/wiki/Git-Commands)
