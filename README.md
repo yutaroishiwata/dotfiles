@@ -10,8 +10,8 @@ $ git clone git@github.com:yutaroishiwata/dotfiles.git ~/Documents/dotfiles
 $ ln -s ~/Documents/dotfiles/.vimrc ~/
 $ ln -s ~/Documents/dotfiles/.gvimrc ~/
 $ ln -s ~/Documents/dotfiles/.tmux.conf ~/
-$ ln -s ~/Documents/dotfiles/.bashrc ~/
 $ ln -s ~/Documents/dotfiles/.zshrc ~/
+$ ln -s ~/Documents/dotfiles/.tigrc ~/
 $ ln -s ~/Documents/dotfiles/.gitconfig ~/
 $ ln -s ~/Documents/dotfiles/.gitignore_global ~/
 ```
