@@ -12,18 +12,6 @@ call plug#begin('~/.vim/plugged')
    Plug 'roxma/nvim-yarp'
    Plug 'roxma/vim-hug-neovim-rpc'
  endif
-
- " Syntax
- Plug 'jiangmiao/simple-javascript-indenter'
- Plug 'jelera/vim-javascript-syntax'
- Plug 'kchmck/vim-coffee-script'
- Plug 'tpope/vim-haml'
- Plug 'groenewege/vim-less'
- Plug 'wavded/vim-stylus'
- Plug 'digitaltoad/vim-jade'
- Plug 'nikvdp/ejs-syntax'
- Plug 'posva/vim-vue'
- Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " language & encoding
