@@ -1,9 +1,5 @@
 # RVM
 source ~/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin"
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv/shims"
-export PATH="$PYENV_ROOT:$PATH"
-export PIPENV_PYTHON="$PYENV_ROOT/python"
+# nodenv
+eval "$(nodenv init -)"
