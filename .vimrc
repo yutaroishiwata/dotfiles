@@ -215,6 +215,11 @@ call ddu#custom#patch_local('filer', {
 \       'defaultAction': 'open',
 \     },
 \   },
+\   'actionOptions': {
+\     'narrow': {
+\       'quit': v:false 
+\     },
+\   },
 \   'uiParams': {
 \     'filer': {
 \       'winWidth': 40,
@@ -231,12 +236,12 @@ autocmd FileType ddu-filer call s:ddu_filer_my_settings()
 function! s:ddu_filer_my_settings() abort
   
   nnoremap <buffer><silent><expr> <CR>
-    \ ddu#ui#filer#is_directory() ?
+    \ ddu#ui#filer#is_tree() ?
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
 
   nnoremap <buffer><silent><expr> l
-    \ ddu#ui#filer#is_directory() ?
+    \ ddu#ui#filer#is_tree() ?
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
 
