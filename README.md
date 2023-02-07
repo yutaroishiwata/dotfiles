@@ -28,7 +28,7 @@ Install plugins
 ```
 
 ## Install tig
-Using [tig](https://github.com/ggreer/the_silver_searcher) to manipulate git repositories on CLI.
+Using [tig](https://jonas.github.io/tig/) to manipulate git repositories on CLI.
 
 Install using brew
 ```
