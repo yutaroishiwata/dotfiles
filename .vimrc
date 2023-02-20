@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'jiangmiao/auto-pairs'
  Plug 'airblade/vim-gitgutter'
  Plug 'vim-airline/vim-airline'
+ Plug 'ntpeters/vim-better-whitespace'
  Plug 'mileszs/ack.vim'
  Plug 'mattn/emmet-vim'
  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -169,6 +170,11 @@ let g:AutoPairsFlyMode = 1
 """"""""""""""""""""""""""""""""""""""""
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+""""""""""""""""""""""""""""""""""""""""
+" vim-better-whitespace
+""""""""""""""""""""""""""""""""""""""""
+let g:better_whitespace_guicolor='#E06C75'
+let g:better_whitespace_enabled=1
 """"""""""""""""""""""""""""""""""""""""
 "  csscomb
 """"""""""""""""""""""""""""""""""""""""
