@@ -107,6 +107,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " terminal
 nnoremap tt :<c-u>rightb vert term<cr>
+tnoremap <Esc> <c-w>N
 
 " Plugins---------------------------------------------------------------------
 
