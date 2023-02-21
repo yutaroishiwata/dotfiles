@@ -42,6 +42,7 @@ set hlsearch
 set updatetime=100
 set ignorecase
 set incsearch
+set wildignore=*/.,*/node_modules/*,*/dist/*
 " json double quote display
 set conceallevel=0
 let g:vim_json_syntax_conceal = 0
@@ -92,10 +93,10 @@ noremap <s-k> {
 noremap <s-l> $
 nnoremap <cr> a<cr><esc>
 " switch active window
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+nnoremap sh <c-w>h
+nnoremap sj <c-w>j
+nnoremap sk <c-w>k
+nnoremap sl <c-w>l
 " window size
 nnoremap + 4<c-w>+
 nnoremap - 4<c-w>-
