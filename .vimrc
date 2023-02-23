@@ -1,25 +1,35 @@
 call plug#begin('~/.vim/plugged')
  Plug 'vim-denops/denops.vim'
- Plug 'Shougo/ddc.vim'
- Plug 'Shougo/ddc-nvim-lsp'
+
  Plug 'Shougo/ddu.vim'
+ Plug 'Shougo/ddu-ui-ff'
  Plug 'Shougo/ddu-ui-filer'
+ Plug 'Shougo/ddu-source-file_rec'
+ Plug 'Shougo/ddu-filter-matcher_substring'
  Plug 'Shougo/ddu-source-file'
  Plug 'Shougo/ddu-kind-file'
  Plug 'Shougo/ddu-column-filename'
+ Plug 'shun/ddu-source-rg'
+ Plug 'shun/ddu-source-buffer'
 
- Plug 'Shougo/vimproc.vim', {'build' : 'make'}
- Plug 'Shougo/unite.vim'
+ Plug 'Shougo/ddc.vim'
+ Plug 'Shougo/ddc-around'
+ Plug 'Shougo/ddc-ui-native'
+ Plug 'Shougo/ddc-matcher_head'
+ Plug 'Shougo/ddc-sorter_rank'
+ Plug 'Shougo/ddc-converter_remove_overlap'
+ Plug 'shun/ddc-source-vim-lsp'
+ Plug 'LumaKernel/ddc-file'
+ Plug 'prabirshrestha/vim-lsp'
+ Plug 'mattn/vim-lsp-settings'
+
  Plug 'jiangmiao/auto-pairs'
  Plug 'airblade/vim-gitgutter'
  Plug 'vim-airline/vim-airline'
  Plug 'ntpeters/vim-better-whitespace'
- Plug 'mileszs/ack.vim'
- Plug 'mattn/emmet-vim'
- Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
- 
-packadd! matchit 
+
+packadd! matchit
 syntax enable
 " language & encoding
 set encoding=utf-8
@@ -105,102 +115,152 @@ nnoremap } 4<c-w>>
 " split pane
 nnoremap ss :<c-u>vsplit<Return><C-w>w
 " Use <Tab> and <S-Tab> to navigate the completion list:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " terminal
 nnoremap tt :<c-u>rightb vert term<cr>
 tnoremap <Esc> <c-w>N
 
 " Plugins---------------------------------------------------------------------
 
-""""""""""""""""""""""""""""""""""""""""
-" Unite.vim
-""""""""""""""""""""""""""""""""""""""""
-" start insert mode
-let g:unite_enable_start_insert = 1
-
-" prefix key
-nmap <Space> [unite]
-" keymaping
-nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
-nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
-nnoremap <silent> [unite]r :<C-u>Unite<Space>file_mru<CR>
-
-" Not case sensitive
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-
-" Grep from the current directory
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-" Grep from word at cursor position
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-" Grep search results recall"
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""
-" coc
+" vim-lsp
 """"""""""""""""""""""""""""""""""""""""
-" Use deoplete
-let g:coc_node_path = '~/.nodebrew/current/bin/node'
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
-let g:coc_global_extensions = [
-      \  'coc-css'
-      \, 'coc-eslint'
-      \, 'coc-html'
-      \, 'coc-json'
-      \, 'coc-tailwindcss'
-      \, 'coc-tsserver'
-      \, 'coc-vetur'
-      \, 'coc-emmet'
-      \, ]
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
 
-let g:coc_filetype_map = {
-  \ 'erb': 'html',
-  \ 'html.erb': 'html',
-  \ }
+    " refer to doc to add more commands
+endfunction
 
-""""""""""""""""""""""""""""""""""""""""
-" auto-pairs
-""""""""""""""""""""""""""""""""""""""""
-" use auto-pairs
-let g:AutoPairsFlyMode = 1 
- 
-""""""""""""""""""""""""""""""""""""""""
-" ack
-""""""""""""""""""""""""""""""""""""""""
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-""""""""""""""""""""""""""""""""""""""""
-" vim-better-whitespace
-""""""""""""""""""""""""""""""""""""""""
-let g:better_whitespace_guicolor='#E06C75'
-let g:better_whitespace_enabled=1
-""""""""""""""""""""""""""""""""""""""""
-"  csscomb
-""""""""""""""""""""""""""""""""""""""""
-" autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
-
-""""""""""""""""""""""""""""""""""""""""
-" deoplete.nvim
-""""""""""""""""""""""""""""""""""""""""
-let g:deoplete#enable_at_startup = 1
-
-let g:fzf_layout = { 'window': 'enew' }
-
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 
 """"""""""""""""""""""""""""""""""""""""
-" ddc
+" ddc-source-vim-lsp
+""""""""""""""""""""""""""""""""""""""""
+call ddc#custom#patch_global('ui', 'native')
+call ddc#custom#patch_global('sourceParams', #{
+      \   around: #{ maxSize: 500 },
+      \ })
+call ddc#custom#patch_global('sources', ['vim-lsp'])
+call ddc#custom#patch_global('sourceOptions', {
+    \ 'vim-lsp': {
+    \   'matchers': ['matcher_head'],
+    \   'mark': 'lsp',
+    \ },
+    \ })
+
+" if you want to use the unsupported CompleteProvider Server,
+" set true by'ignoreCompleteProvider'.
+call ddc#custom#patch_filetype(['css'], {
+    \ 'sourceParams': {
+    \   'vim-lsp': {
+    \     'ignoreCompleteProvider': v:true,
+    \   },
+    \ },
+    \ })
+
+" Use ddc.
+call ddc#enable()
+
+
+""""""""""""""""""""""""""""""""""""""""
+" ddu-ui-ff
 """"""""""""""""""""""""""""""""""""""""
 call ddu#custom#patch_global({
-    \   'ui': 'filer',
-    \   'actionOptions': {
-    \     'narrow': {
-    \       'quit': v:false,
-    \     },
-    \   },
-    \ })
+\   'ui': 'ff',
+\   'sources': [
+\     {'name': 'buffer'},
+\   ],
+\   'sourceOptions': {
+\     '_': {
+\       'matchers': ['matcher_substring'],
+\     },
+\   },
+\   'kindOptions': {
+\     'file': {
+\       'defaultAction': 'open',
+\     },
+\   },
+\ })
+
+call ddu#custom#patch_local('buffer', {
+\   'ui': 'ff',
+\   'sources': [
+\     {'name': 'buffer'},
+\   ],
+\ })
+
+call ddu#custom#patch_local('file_rec', {
+\   'ui': 'ff',
+\   'sources': [
+\     {'name': 'file_rec', 'params': { 'ignoredDirectories': ['.git', 'node_modules', 'vendor', '.next', 'dist']}},
+\   ],
+\ })
+
+autocmd FileType ddu-ff call s:ddu_my_settings()
+function! s:ddu_my_settings() abort
+  nnoremap <buffer><silent> <CR>
+        \ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
+  nnoremap <buffer><silent> <Space>
+        \ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
+  nnoremap <buffer><silent> i
+        \ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
+  nnoremap <buffer><silent> q
+        \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+endfunction
+
+autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
+function! s:ddu_filter_my_settings() abort
+  noremap <buffer><silent> <CR>
+  \ <Esc><Cmd>close<CR>
+  nnoremap <buffer><silent> <CR>
+  \ <Cmd>close<CR>
+  nnoremap <buffer><silent> q
+  \ <Cmd>close<CR>
+endfunction
+
+nmap <silent> <Space>b <Cmd>call ddu#start({
+\   'name': 'buffer',
+\   'uiParams': {
+\     'filer': {
+\       'splitDirection': 'top',
+\       'split': 'horizontal',
+\     }
+\   },
+\ })<CR>
+
+nmap <silent> <Space>n <Cmd>call ddu#start({
+\   'name': 'file_rec',
+\   'uiParams': {
+\     'filer': {
+\       'splitDirection': 'top',
+\       'split': 'horizontal',
+\     }
+\   },
+\ })<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " ddu-ui-filer
@@ -225,7 +285,7 @@ call ddu#custom#patch_local('filer', {
 \   },
 \   'actionOptions': {
 \     'narrow': {
-\       'quit': v:false 
+\       'quit': v:false
 \     },
 \   },
 \   'uiParams': {
@@ -242,7 +302,7 @@ autocmd TabEnter,CursorHold,FocusGained <buffer>
 
 autocmd FileType ddu-filer call s:ddu_filer_my_settings()
 function! s:ddu_filer_my_settings() abort
-  
+
   nnoremap <buffer><silent><expr> <CR>
     \ ddu#ui#filer#is_tree() ?
     \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
@@ -280,10 +340,10 @@ function! s:ddu_filer_my_settings() abort
   nnoremap <buffer><silent> mv
     \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'move'})<CR>
 
-  nnoremap <buffer><silent> t
+  nnoremap <buffer><silent> n
     \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'newFile'})<CR>
 
-  nnoremap <buffer><silent> mk
+  nnoremap <buffer><silent> f
     \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'newDirectory'})<CR>
 
   nnoremap <buffer><silent> yy
@@ -292,8 +352,22 @@ endfunction
 
 nmap <silent> sd <Cmd>call ddu#start({
 \   'name': 'filer',
-\   'uiParams': {'filer': {'search': expand('%:p')}},
+\   'uiParams': {
+\     'filer': {
+\       'path': expand('%:p'),
+\       'sortTreesFirst': v:true,
+\     }
+\   },
 \ })<CR>
-nmap <silent> sf <Cmd>call ddu#start({
-\   'name': 'filer',
-\ })<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+" auto-pairs
+""""""""""""""""""""""""""""""""""""""""
+" use auto-pairs
+let g:AutoPairsFlyMode = 1
+
+""""""""""""""""""""""""""""""""""""""""
+" vim-better-whitespace
+""""""""""""""""""""""""""""""""""""""""
+let g:better_whitespace_guicolor='#E06C75'
+let g:better_whitespace_enabled=1
