@@ -109,7 +109,7 @@ nnoremap sk <c-w>k
 nnoremap sl <c-w>l
 " window size
 nnoremap + 4<c-w>+
-nnoremap - 4<c-w>-
+nnoremap _ 4<c-w>-
 nnoremap { 4<c-w><
 nnoremap } 4<c-w>>
 " split pane
