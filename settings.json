@@ -1,0 +1,21 @@
+{
+    "workbench.colorTheme": "onehalf-dark",
+    "editor.fontSize": 11,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.inlineSuggest.enabled": true
+    //========================================================================
+    // VSCodeVim settnigs
+    //========================================================================
+    "vim.useSystemClipboard": true,
+    // nnoremap
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": [";"], "after": [":"] },
+        // moving
+        { "before": ["H"], "after": ["^"] },
+        { "before": ["J"], "after": ["}"] },
+        { "before": ["K"], "after": ["{"] },
+        { "before": ["L"], "after": ["$"] },
+    ]
+}
