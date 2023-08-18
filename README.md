@@ -14,6 +14,7 @@ $ ln -s ~/Documents/dotfiles/.zshrc ~/
 $ ln -s ~/Documents/dotfiles/.tigrc ~/
 $ ln -s ~/Documents/dotfiles/.gitconfig ~/
 $ ln -s ~/Documents/dotfiles/.gitignore_global ~/
+$ ln -s ~/Documents/dotfiles/.finicky.js ~/
 ```
 
 ## vim-plug Setup
