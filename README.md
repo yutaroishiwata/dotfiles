@@ -11,6 +11,7 @@ $ ln -s ~/Documents/dotfiles/.vimrc ~/
 $ ln -s ~/Documents/dotfiles/.gvimrc ~/
 $ ln -s ~/Documents/dotfiles/.tmux.conf ~/
 $ ln -s ~/Documents/dotfiles/.zshrc ~/
+$ ln -s ~/Documents/dotfiles/.zprofile ~/
 $ ln -s ~/Documents/dotfiles/.tigrc ~/
 $ ln -s ~/Documents/dotfiles/.gitconfig ~/
 $ ln -s ~/Documents/dotfiles/.gitignore_global ~/
